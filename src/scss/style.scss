@@ -3,3 +3,90 @@
 @import "../fonts/fonts"; //fonts
 
 @import "../colors/colors"; //colors
+
+body {
+  color: $primary-white;
+  font-size: 24px;
+}
+
+.wrapper {
+  //min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__calculator {
+  }
+}
+
+
+[class *= '__container'] {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.calculator {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__body {
+    padding: 20px;
+    border-radius: 36px;
+    background-color: $primary-black;
+    box-shadow: 0 0 18px $primary-light-grey;
+
+  }
+
+  &__screen {
+    text-align: right;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 50px;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  &__btn{
+    text-align: center;
+    border: none;
+    background-color: $primary-grey;
+    padding: 20px;
+    border-radius: 18px;
+
+    &_big {
+      grid-column: 4;
+      grid-row: 4/6;
+    }
+
+    transition: all .3s ease;
+    &:hover {
+      background-color: lighten($primary-grey, 20);
+    }
+
+    &_orange {
+      background-color: $primary-orange;
+
+      transition: all .3s ease;
+      &:hover {
+        background-color: adjust-hue($primary-orange, -10);
+      }
+    }
+
+    &_light-grey {
+      background-color: $primary-light-grey;
+
+      transition: all .3s ease;
+      &:hover {
+        background-color: lighten($primary-light-grey, 20);
+      }
+    }
+  }
+}
